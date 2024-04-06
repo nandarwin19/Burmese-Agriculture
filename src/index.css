@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Roobert Regular";
+  src: url("/Roobert-Regular/Roobert-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Cobaissi";
+  src: url("/fonts/Cobaissi-Font/COBAISSI.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Aquatico";
+  src: url("/fonts/Aquatico-Font/Aquatico-Regular.otf") format("opentype");
+}
+
+.Aquatico {
+  font-family: "Aquatico", "Cobaissi", "roobert", inter;
+}
+
+.Cobaissi {
+  font-family: "Cobaissi";
+}
+
+.roobert {
+  font-family: "roobert", inter;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.max-container {
+  @apply w-[95%] mx-auto;
+}
+
+.max-padding {
+  @apply pt-14 md:pt-8;
+}
+
+.trendy-plant-bg {
+  background-image: url("/img/trendy-plant-bg.png");
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.bg-blur {
+  backdrop-filter: blur(5px);
+}
