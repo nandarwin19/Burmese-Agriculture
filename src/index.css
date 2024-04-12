@@ -64,3 +64,13 @@ body {
 .bg-blur {
   backdrop-filter: blur(5px);
 }
+
+/* Blog background  */
+.blog-bg {
+  background-image: url("/img/blog-bg.webp");
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}

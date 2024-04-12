@@ -2,6 +2,7 @@ import { PiPottedPlantDuotone } from "react-icons/pi";
 import { IoMdSearch } from "react-icons/io";
 import { FiShoppingBag } from "react-icons/fi";
 import { CgMenuRight } from "react-icons/cg";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
@@ -13,9 +14,13 @@ export default function Navbar() {
         </div>
         <div className="hidden text-slate-400 md:flex text-md font-bold">
           <ul className="items-center gap-8 flex">
-            <li className="cursor-pointer">Home</li>
+            <Link to={`/`}>
+              <li className="cursor-pointer">Home</li>
+            </Link>
             <li className="cursor-pointer">Plants</li>
-            <li className="cursor-pointer">Blogs</li>
+            <Link to={`/blogs`}>
+              <li className="cursor-pointer">Blogs</li>
+            </Link>
           </ul>
         </div>
         <div className="flex items-center gap-8 text-xl  font-bold">

@@ -1,4 +1,4 @@
-import Title from "./Title";
+import Title from "../../common/Title";
 import TrendyPlantCard from "./TrendyPlantCard";
 
 export default function TrendyPlant() {

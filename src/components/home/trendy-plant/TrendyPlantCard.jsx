@@ -1,9 +1,9 @@
 import { FiShoppingBag } from "react-icons/fi";
-
+import Proptypes from "prop-types";
 export default function TrendyPlantCard({ image, title, description, price }) {
   return (
     <div
-      className={`flex relative p-3 md:p-6 w-full md:flex-row bg-blur justify-between bg-[#a7a6a600] md:w-1/2 mt-20 gap-3 border-2 border-[#80808078] rounded-[3.2rem]`}
+      className={`flex relative p-3 md:p-6 w-full md:flex-row bg-blur justify-between bg-[#a5a5a507] md:w-1/2 mt-20 gap-3 border-2 border-[#80808098] rounded-[3.2rem]`}
     >
       <div className="w-1/2 md:w-1/3 h-full">
         <img
@@ -28,3 +28,10 @@ export default function TrendyPlantCard({ image, title, description, price }) {
     </div>
   );
 }
+
+TrendyPlantCard.propTypes = {
+  image: Proptypes.string.isRequired,
+  title: Proptypes.string.isRequired,
+  description: Proptypes.string.isRequired,
+  price: Proptypes.number.isRequired,
+};
