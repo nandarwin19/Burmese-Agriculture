@@ -1,7 +1,11 @@
 import { FaPlay } from "react-icons/fa";
 import { FaStar } from "react-icons/fa6";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 export default function Hero() {
+  gsap.registerPlugin(ScrollTrigger);
+
   return (
     <div className="max-container h-screen">
       <div className="w-4/5 md:w-1/2 mt-16">

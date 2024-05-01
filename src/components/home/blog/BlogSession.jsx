@@ -3,7 +3,7 @@ import Title from "../../common/Title";
 
 export default function BlogSession() {
   return (
-    <div className="w-full min-h-screen">
+    <div id="blog" className="w-full min-h-screen">
       <div className="max-container pt-20">
         <Title text="Our Blog" />
         <div className="mt-10">

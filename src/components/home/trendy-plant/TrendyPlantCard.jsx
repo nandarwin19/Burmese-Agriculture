@@ -33,5 +33,5 @@ TrendyPlantCard.propTypes = {
   image: Proptypes.string.isRequired,
   title: Proptypes.string.isRequired,
   description: Proptypes.string.isRequired,
-  price: Proptypes.number.isRequired,
+  price: Proptypes.string.isRequired,
 };

@@ -27,5 +27,5 @@ TopSellingCard.propTypes = {
   img: Proptypes.string,
   description: Proptypes.string,
   title: Proptypes.string,
-  price: Proptypes.number,
+  price: Proptypes.string,
 };
