@@ -11,7 +11,7 @@ function Home() {
       <Hero />
 
       <TrendyPlant />
-      <PlantModel />
+      {/* <PlantModel /> */}
       <TopSelling />
       <TrendyPlant />
       <TopSelling />

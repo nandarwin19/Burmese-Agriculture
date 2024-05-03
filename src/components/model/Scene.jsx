@@ -19,10 +19,14 @@ export default function Scene({ ...props }) {
     mm.add(
       {
         isDesktop: `(min-width: 48em)`,
-        isMobile: `(max-width: 48em)`,
+        isMobile: `(max-width: 29em)`,
       },
       (context) => {
         let { isDesktop, isMobile } = context.conditions;
+        if (isDesktop) {
+          camera.position.set(-1, 2, 6);
+        }
+
         let t1 = gsap.timeline({
           scrollTrigger: {
             trigger: "#plant-model",
@@ -40,6 +44,7 @@ export default function Scene({ ...props }) {
         )
 
           .to(threeScene.rotation, { y: 3 }, "key-1")
+
           // .to(threeScene.rotation, { y: 3, z: -3 }, "key0")
           .to(threeScene.scale, { x: 10, y: 10, z: 10 }, "key0")
           .to(camera.position, { z: -10, x: 2.1, y: 1 }, "key0")
@@ -50,8 +55,11 @@ export default function Scene({ ...props }) {
           .to(threeScene.scale, { x: 0.7, y: 0.7, z: 0.7 }, "key2")
           .to(threeScene.rotation, { z: 0, y: 6.3 }, "key3")
           // .to(threeScene.position, { x: -0.5 }, "key3")
-          .to(threeScene.scale, { x: 0.2, y: 0.2, z: 0.2 }, "key3")
-          .to(camera.position, { x: isDesktop ? 0.8 : 0, y: 0 }, "key3");
+          .to(threeScene.scale, { x: 0.5, y: 0.5, z: 0.5 }, "key3")
+          // .to(camera.position, { x: isDesktop ? 0.8 : 0, y: 0 }, "key3")
+          .to(threeScene.rotation, { z: 0, y: 6.3 }, "key4")
+          .to(threeScene.scale, { x: 0.1, y: 0.1, z: 0.1 }, "key4")
+          .to(camera.position, { x: isDesktop ? 1.7 : 0, y: 0.43 }, "key4");
 
         if (isMobile) {
           camera.fov = 20;

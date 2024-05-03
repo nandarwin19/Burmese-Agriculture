@@ -1,14 +1,13 @@
-import { FaPlay } from "react-icons/fa";
-import { FaStar } from "react-icons/fa6";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { FaPlay, FaStar } from "react-icons/fa";
 
 export default function Hero() {
   gsap.registerPlugin(ScrollTrigger);
 
   return (
     <div className="max-container h-screen">
-      <div className="w-4/5 md:w-1/2 mt-16">
+      <div className=" w-4/5 md:w-1/2 mt-16">
         <h1 className="roobert whitespace-nowrap text-[3rem] md:text-[5rem] lg:text-[6rem] font-bold tracking-wide">
           Breath Natureal
         </h1>
@@ -54,6 +53,11 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      {/* <img
+        src="/img/p1.png"
+        className="object-cover lg:hidden w-72 mx-auto mt-8"
+      /> */}
     </div>
   );
 }

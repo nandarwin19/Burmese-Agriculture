@@ -1,6 +1,10 @@
 import { PiPottedPlantDuotone } from "react-icons/pi";
+import { useLocation } from "react-router-dom";
 
 export default function Footer() {
+  const location = useLocation();
+  const isRootRoute = location.pathname === "/";
+
   return (
     <div className="w-full bg-[#021801] h-full">
       <div className="max-container">
@@ -8,8 +12,8 @@ export default function Footer() {
           <div className="flex w-full items-start md:w-2/3">
             <div className="flex gap-2 w-1/2 flex-col items-start">
               <div className="flex gap-2 items-center text-lg md:text-xl font-bold">
-                <PiPottedPlantDuotone className="text-3xl" />
-                <p>Planto.</p>
+                <PiPottedPlantDuotone className="lg:hidden" />
+                <p className="lg:hidden">Planto.</p>
               </div>
 
               <p className="text-sm">
