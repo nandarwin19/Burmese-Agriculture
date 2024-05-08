@@ -3,8 +3,12 @@ import { IoMdSearch } from "react-icons/io";
 import { FiShoppingBag } from "react-icons/fi";
 import { CgMenuRight } from "react-icons/cg";
 import { Link } from "react-router-dom";
+import { MdOutlineCreate } from "react-icons/md";
+import { useSelector } from "react-redux";
 
 export default function Navbar() {
+  const { currentUser } = useSelector((state) => state.user);
+
   return (
     <div className="flex items-center w-full h-[10vh]">
       <nav className="flex max-container items-center justify-between">
@@ -24,6 +28,11 @@ export default function Navbar() {
           </ul>
         </div>
         <div className="flex items-center gap-8 text-xl  font-bold">
+          {currentUser.isAdmin && (
+            <Link to={"/create-blog"}>
+              <MdOutlineCreate className="cursor-pointer" />
+            </Link>
+          )}
           <IoMdSearch className="cursor-pointer" />
           <FiShoppingBag className="cursor-pointer" />
           <CgMenuRight className="cursor-pointer" />
