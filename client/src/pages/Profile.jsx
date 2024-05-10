@@ -49,7 +49,7 @@ const Profile = () => {
 
   return (
     <div className="w-full min-h-screen flex">
-      <div className="w-52 mx-2 min-h-screen border-transparent border-r-[#0b2b0f] border-2">
+      <div className="w-52 mx-2 min-h-screen">
         {sidebarLinks.map(({ name, icon: Icon, path }) => (
           <Link
             key={name}
@@ -63,6 +63,7 @@ const Profile = () => {
           </Link>
         ))}
       </div>
+      <div className="min-h-screen w-[1.2px] bg-[#0c2f0e] mx-2"></div>
       <div className="flex-1">{renderContent()}</div>
     </div>
   );
