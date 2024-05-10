@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import CreateBlog from "./components/create-blog/CreateBlog";
 
 import OnlyAdminPrivateRoute from "./components/common/OnlyAdminPrivateRoute";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -15,14 +16,17 @@ function App() {
       <div className="bg-[#02210a] text-slate-200">
         <Navbar />
         <Routes>
+          {/* Public Route  */}
           <Route path="/" element={<Home />} />
           <Route path="/sign" element={<SignInUp />} />
           <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/:id" element={<Id />} />
 
+          {/* Private Route  */}
           <Route element={<OnlyAdminPrivateRoute />}>
             <Route path="/create-blog" element={<CreateBlog />} />
+            <Route path="/profile" element={<Profile />} />
           </Route>
-          <Route path="/blogs/:id" element={<Id />} />
         </Routes>
         <Footer />
       </div>

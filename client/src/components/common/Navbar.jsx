@@ -1,10 +1,10 @@
 import { PiPottedPlantDuotone } from "react-icons/pi";
 import { IoMdSearch } from "react-icons/io";
 import { FiShoppingBag } from "react-icons/fi";
-import { CgMenuRight } from "react-icons/cg";
 import { Link } from "react-router-dom";
 import { MdOutlineCreate } from "react-icons/md";
 import { useSelector } from "react-redux";
+import { CiUser } from "react-icons/ci";
 
 export default function Navbar() {
   const { currentUser } = useSelector((state) => state.user);
@@ -28,14 +28,13 @@ export default function Navbar() {
           </ul>
         </div>
         <div className="flex items-center gap-8 text-xl  font-bold">
-          {currentUser.isAdmin && (
-            <Link to={"/create-blog"}>
-              <MdOutlineCreate className="cursor-pointer" />
-            </Link>
-          )}
           <IoMdSearch className="cursor-pointer" />
           <FiShoppingBag className="cursor-pointer" />
-          <CgMenuRight className="cursor-pointer" />
+          {currentUser?.isAdmin && (
+            <Link to={"/profile"}>
+              <CiUser className="cursor-pointer" />
+            </Link>
+          )}
         </div>
       </nav>
     </div>
