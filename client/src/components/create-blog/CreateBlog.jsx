@@ -20,6 +20,7 @@ export default function CreateBlog() {
   const [imageUploadError, setImageUploadError] = useState(null);
   const [publishError, setPublishError] = useState(null);
   const navigate = useNavigate();
+  console.log(formData);
 
   const handleUploadImage = async () => {
     try {
@@ -37,7 +38,7 @@ export default function CreateBlog() {
         (snapshot) => {
           const progress =
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          setImageUploadProgress(progress);
+          setImageUploadProgress(progress.toFixed(0));
         },
         (error) => {
           setImageUploadError("Image upload failed");

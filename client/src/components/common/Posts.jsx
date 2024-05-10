@@ -6,7 +6,8 @@ export default function Posts() {
   const { currentUser } = useSelector((state) => state.user);
   const [userPosts, setUserPosts] = useState([]);
   const [showMore, setShowMore] = useState(true);
-
+  const [postIdToDelete, setPostIdToDelete] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -38,6 +39,29 @@ export default function Posts() {
         if (data.posts.length < 9) {
           setShowMore(false);
         }
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  const handleDeletePost = async () => {
+    setShowModal(false);
+    document.getElementById("my_modal_5").close();
+    try {
+      const res = await fetch(
+        `/api/post/deletepost/${postIdToDelete}/${currentUser._id}`,
+        {
+          method: "DELETE",
+        }
+      );
+      const data = await res.json();
+      if (!res.ok) {
+        console.log(data.message);
+      } else {
+        setUserPosts((prev) =>
+          prev.filter((post) => post._id !== postIdToDelete)
+        );
       }
     } catch (error) {
       console.log(error.message);
@@ -79,10 +103,17 @@ export default function Posts() {
                     </td>
                     <td>{post.category}</td>
                     <td>
-                      <span className="font-medium text-red-500 hover:underline cursor-pointer">
+                      <span
+                        onClick={() => {
+                          document.getElementById("my_modal_5").showModal();
+                          setPostIdToDelete(post._id);
+                        }}
+                        className="font-medium text-red-500 hover:underline cursor-pointer"
+                      >
                         Delete
                       </span>
                     </td>
+
                     <td>
                       <Link
                         className="text-teal-500 hover:underline"
@@ -108,6 +139,28 @@ export default function Posts() {
           Show more
         </button>
       )}
+
+      <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box">
+          <h3 className="font-bold text-lg">Hello!</h3>
+          <p className="py-4">Are you sure you want to delete?</p>
+
+          <div className="modal-action">
+            <div className="flex gap-4">
+              <button type="submit" className="btn" onClick={handleDeletePost}>
+                Yes
+              </button>
+              <button
+                type="button"
+                className="btn"
+                onClick={() => document.getElementById("my_modal_5").close()}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </dialog>
     </div>
   );
 }
