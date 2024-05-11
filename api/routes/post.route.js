@@ -13,7 +13,6 @@ const router = express.Router();
 router.post("/create", verifyToken, create);
 router.get("/getposts", getposts);
 router.delete("/deletepost/:postId/:userId", verifyToken, deletePost);
-
 router.put("/updatepost/:postId/:userId", verifyToken, updatepost);
 
 export default router;
