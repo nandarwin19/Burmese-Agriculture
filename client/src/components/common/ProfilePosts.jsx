@@ -94,7 +94,7 @@ export default function ProfilePosts() {
                   <tr>
                     <td>{new Date(post.updatedAt).toLocaleDateString()}</td>
                     <td>
-                      <Link to={`/post/${post.slug}`}>
+                      <Link to={`/blogs/${post.slug}`}>
                         <img
                           src={post.image}
                           alt={post.title}
@@ -103,7 +103,7 @@ export default function ProfilePosts() {
                       </Link>
                     </td>
                     <td>
-                      <Link to={`/post/${post.slug}`}>{post.title}</Link>
+                      <Link to={`/blogs/${post.slug}`}>{post.title}</Link>
                     </td>
                     <td>{post.category}</td>
                     <td>

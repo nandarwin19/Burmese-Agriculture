@@ -10,6 +10,7 @@ import CreateBlog from "./components/create-blog/CreateBlog";
 import OnlyAdminPrivateRoute from "./components/common/OnlyAdminPrivateRoute";
 import Profile from "./pages/Profile";
 import UpdateBlog from "./pages/UpdateBlog";
+import PostPage from "./pages/PostPage";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/sign" element={<SignInUp />} />
           <Route path="/blogs" element={<Blogs />} />
-          <Route path="/blogs/:id" element={<Id />} />
+          <Route path="/blogs/:blogSlug" element={<PostPage />} />
 
           {/* Private Route  */}
           <Route element={<OnlyAdminPrivateRoute />}>
