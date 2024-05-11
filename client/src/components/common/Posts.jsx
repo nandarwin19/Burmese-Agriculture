@@ -117,7 +117,7 @@ export default function Posts() {
                     <td>
                       <Link
                         className="text-teal-500 hover:underline"
-                        to={`/update-post/${post._id}`}
+                        to={`/update-blog/${post._id}`}
                       >
                         <span>Edit</span>
                       </Link>

@@ -9,6 +9,7 @@ import CreateBlog from "./components/create-blog/CreateBlog";
 
 import OnlyAdminPrivateRoute from "./components/common/OnlyAdminPrivateRoute";
 import Profile from "./pages/Profile";
+import UpdateBlog from "./pages/UpdateBlog";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route element={<OnlyAdminPrivateRoute />}>
             <Route path="/create-blog" element={<CreateBlog />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/update-blog/:postId" element={<UpdateBlog />} />
           </Route>
         </Routes>
         <Footer />
