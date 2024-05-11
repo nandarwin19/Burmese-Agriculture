@@ -1,17 +1,15 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { CiUser } from "react-icons/ci";
 import { LiaComments } from "react-icons/lia";
 import { MdExitToApp, MdOutlineCreate, MdOutlinePostAdd } from "react-icons/md";
-import Users from "../components/common/Users";
 import CreateBlog from "../components/create-blog/CreateBlog";
-
-import Posts from "../components/common/Posts";
 import Comments from "../components/common/Comments";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import { useDispatch } from "react-redux";
-import { useSelect } from "@react-three/drei";
 import { signoutSuccess } from "../redux/user/userSlice";
+import ProfileUsers from "../components/common/ProfileUsers";
+import ProfilePosts from "../components/common/ProfilePosts";
 
 const sidebarLinks = [
   { name: "users", icon: CiUser, path: "/profile?tab=users" },
@@ -40,9 +38,9 @@ const Profile = () => {
   const renderContent = () => {
     switch (tab) {
       case "users":
-        return <Users />;
+        return <ProfileUsers />;
       case "posts":
-        return <Posts />;
+        return <ProfilePosts />;
       case "comments":
         return <Comments />;
       case "create-blog":
@@ -71,7 +69,7 @@ const Profile = () => {
   return (
     <div className="w-full min-h-screen flex">
       <Toaster />
-      <div className="w-52 mx-2 h-[90vh] relative">
+      <div className="w-52 mx-2 min-h-[90vh] relative">
         <>
           {sidebarLinks.map(({ name, icon: Icon, path }) => (
             <Link

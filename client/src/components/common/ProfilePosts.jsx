@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-export default function Posts() {
+export default function ProfilePosts() {
   const { currentUser } = useSelector((state) => state.user);
   const [userPosts, setUserPosts] = useState([]);
   const [showMore, setShowMore] = useState(true);
@@ -62,14 +63,17 @@ export default function Posts() {
         setUserPosts((prev) =>
           prev.filter((post) => post._id !== postIdToDelete)
         );
+        toast.success("Post deleted");
       }
     } catch (error) {
       console.log(error.message);
+      toast.error("Something went wrong");
     }
   };
 
   return (
     <div>
+      <Toaster />
       {currentUser.isAdmin && userPosts.length > 0 ? (
         <>
           <div className=" overflow-x-scroll overflow-y-scroll md:overflow-hidden p-3">
