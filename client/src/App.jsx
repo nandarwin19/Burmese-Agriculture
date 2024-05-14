@@ -11,11 +11,13 @@ import OnlyAdminPrivateRoute from "./components/common/OnlyAdminPrivateRoute";
 import Profile from "./pages/Profile";
 import UpdateBlog from "./pages/UpdateBlog";
 import PostPage from "./pages/PostPage";
+import ScrollToTop from "./components/common/ScrollToTop";
 
 function App() {
   return (
     <Router>
       <div className="bg-[#02210a] text-slate-200">
+        <ScrollToTop />
         <Navbar />
         <Routes>
           {/* Public Route  */}

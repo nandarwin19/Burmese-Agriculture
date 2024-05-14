@@ -4,6 +4,7 @@ import { PiHandsClapping } from "react-icons/pi";
 import Comments from "../components/Blog-Id-page/Comments";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import CommentSection from "../components/common/CommentSection";
 
 export default function PostPage() {
   const { blogSlug } = useParams();
@@ -69,6 +70,7 @@ export default function PostPage() {
         className="p-3 max-w-2xl mx-auto w-full post-content"
         dangerouslySetInnerHTML={{ __html: post && post.content }}
       ></div>
+      <CommentSection />
     </main>
   );
 }
