@@ -146,7 +146,6 @@ export default function ProfilePosts() {
 
       <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
-          <h3 className="font-bold text-lg">Hello!</h3>
           <p className="py-4">Are you sure you want to delete?</p>
 
           <div className="modal-action">

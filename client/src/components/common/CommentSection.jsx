@@ -4,12 +4,16 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import Comment from "./Comment";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function CommentSection({ postId }) {
   const { currentUser } = useSelector((state) => state.user);
   const [comment, setComment] = useState("");
   const [commentError, setCommentError] = useState(null);
   const [comments, setComments] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [commentToDelete, setCommentToDelete] = useState(null);
+
   const navigate = useNavigate();
   console.log(comments);
 
@@ -92,8 +96,29 @@ export default function CommentSection({ postId }) {
     );
   };
 
+  const handleDelete = async (commentId) => {
+    setShowModal(false);
+    document.getElementById("my_modal_5").close();
+    try {
+      if (!currentUser) return navigate("/sign");
+      const res = await fetch(`/api/comment/deleteComment/${commentId}`, {
+        method: "DELETE",
+      });
+      if (res.ok) {
+        const data = await res.json();
+
+        setComments(comments.filter((comment) => comment._id !== commentId));
+
+        toast.success("Comment deleted successfully!");
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   return (
     <div className="max-w-2xl mx-auto w-full p-3">
+      <Toaster />
       {currentUser ? (
         <div className="flex items-center gap-1 my-5 text-gray-500 text-sm">
           <p>Signed in as:</p>
@@ -161,10 +186,39 @@ export default function CommentSection({ postId }) {
               comment={comment}
               onLike={handleLike}
               onEdit={handleEdit}
+              onDelete={(commentId) => {
+                setShowModal(true);
+                document.getElementById("my_modal_5").showModal();
+                setCommentToDelete(commentId);
+              }}
             />
           ))}
         </>
       )}
+      <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box">
+          <p className="py-4">Are you sure you want to delete?</p>
+
+          <div className="modal-action">
+            <div className="flex gap-4">
+              <button
+                type="submit"
+                className="btn"
+                onClick={() => handleDelete(commentToDelete)}
+              >
+                Yes
+              </button>
+              <button
+                type="button"
+                className="btn"
+                onClick={() => document.getElementById("my_modal_5").close()}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </dialog>
     </div>
   );
 }
