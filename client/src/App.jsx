@@ -10,6 +10,7 @@ import UpdateBlog from "./pages/UpdateBlog";
 import PostPage from "./pages/PostPage";
 import ScrollToTop from "./components/common/ScrollToTop";
 import BlogPage from "./pages/BlogPage";
+import SearchPage from "./pages/SearchPage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/sign" element={<SignInUp />} />
           <Route path="/blogs" element={<BlogPage />} />
           <Route path="/blogs/:blogSlug" element={<PostPage />} />
+          <Route path="/search" element={<SearchPage />} />
 
           {/* Private Route  */}
           <Route element={<OnlyAdminPrivateRoute />}>

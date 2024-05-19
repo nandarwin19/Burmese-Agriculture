@@ -1,13 +1,33 @@
 import { PiPottedPlantDuotone } from "react-icons/pi";
 import { IoMdSearch } from "react-icons/io";
 import { FiShoppingBag } from "react-icons/fi";
-import { Link } from "react-router-dom";
-import { MdOutlineCreate } from "react-icons/md";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { CiUser } from "react-icons/ci";
+import { useEffect, useState } from "react";
+import { TextInput } from "flowbite-react";
+import { AiOutlineSearch } from "react-icons/ai";
+import { FaSearch } from "react-icons/fa";
 
 export default function Navbar() {
   const { currentUser } = useSelector((state) => state.user);
+  const path = useLocation().pathname;
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(location.search);
+    const search = urlParams.get("searchTerm");
+    if (search) {
+      setSearchTerm(search);
+    }
+  }, [location.search]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/search`);
+  };
 
   return (
     <div className="flex items-center w-full h-[10vh]">
@@ -27,12 +47,15 @@ export default function Navbar() {
             </Link>
           </ul>
         </div>
-        <div className="flex items-center gap-8 text-xl  font-bold">
-          <IoMdSearch className="cursor-pointer" />
-          <FiShoppingBag className="cursor-pointer" />
+        <div className="flex items-center gap-8 ">
+          <IoMdSearch
+            onClick={handleSubmit}
+            className="cursor-pointer w-5 h-5"
+          />
+          <FiShoppingBag className="cursor-pointer w-5 h-5" />
           {currentUser?.isAdmin && (
             <Link to={"/profile"}>
-              <CiUser className="cursor-pointer" />
+              <CiUser className="cursor-pointer w-5 h-5" />
             </Link>
           )}
         </div>
