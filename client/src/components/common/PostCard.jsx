@@ -6,13 +6,13 @@ import { MdOutlineTopic } from "react-icons/md";
 export default function PostCard({ post }) {
   return (
     <div
-      className={`group flex relative p-3 md:p-6 w-full md:flex-row bg-blur justify-between bg-[#a5a5a507] md:w-[48%] gap-3 border-2 border-[#80808098] rounded-[3.2rem]`}
+      className={`group flex relative p-3 md:p-5 w-full md:flex-row bg-blur justify-between bg-[#a5a5a507] md:w-[48%] gap-3 border-2 border-[#80808098] rounded-[3.2rem]`}
     >
       <div className="w-1/2 md:w-1/3 h-full">
         <Link to={`/blogs/${post.slug}`}>
           <img
             src={post?.image}
-            className="w-full h-[100%] group-hover:scale-105 group-hover:transition duration-1000 ease-in-out  rounded-xl"
+            className="w-[200px] h-[200px] group-hover:scale-105 group-hover:transition duration-1000 ease-in-out  rounded-xl"
             alt="trendy plant"
           />
         </Link>

@@ -1,17 +1,15 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "./components/common/Footer";
 import Navbar from "./components/common/Navbar";
-import Blogs from "./components/blog-page/Blogs";
-import Id from "./components/Blog-Id-page/Id";
 import SignInUp from "./pages/SignInUp";
 import Home from "./pages/Home";
 import CreateBlog from "./components/create-blog/CreateBlog";
-
 import OnlyAdminPrivateRoute from "./components/common/OnlyAdminPrivateRoute";
 import Profile from "./pages/Profile";
 import UpdateBlog from "./pages/UpdateBlog";
 import PostPage from "./pages/PostPage";
 import ScrollToTop from "./components/common/ScrollToTop";
+import BlogPage from "./pages/BlogPage";
 
 function App() {
   return (
@@ -23,7 +21,7 @@ function App() {
           {/* Public Route  */}
           <Route path="/" element={<Home />} />
           <Route path="/sign" element={<SignInUp />} />
-          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs" element={<BlogPage />} />
           <Route path="/blogs/:blogSlug" element={<PostPage />} />
 
           {/* Private Route  */}
