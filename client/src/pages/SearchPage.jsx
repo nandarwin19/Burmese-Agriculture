@@ -137,7 +137,7 @@ export default function SearchPage() {
             </Select>
           </div>
           <Button type="submit" outline gradientDuoTone="purpleToPink">
-            Apply Filters
+            Apply
           </Button>
         </form>
       </div>
