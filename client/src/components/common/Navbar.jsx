@@ -1,6 +1,5 @@
 import { PiPottedPlantDuotone } from "react-icons/pi";
 import { IoMdSearch } from "react-icons/io";
-import { FiShoppingBag } from "react-icons/fi";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { CiUser } from "react-icons/ci";
@@ -9,7 +8,6 @@ import { GoSignIn } from "react-icons/go";
 
 export default function Navbar() {
   const { currentUser } = useSelector((state) => state.user);
-  const path = useLocation().pathname;
   const location = useLocation();
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
@@ -62,7 +60,7 @@ export default function Navbar() {
             onClick={handleSubmit}
             className="cursor-pointer w-5 h-5"
           />
-          <FiShoppingBag className="cursor-pointer w-5 h-5" />
+
           {currentUser?.isAdmin && (
             <Link to={"/profile"}>
               <CiUser className="cursor-pointer w-5 h-5" />

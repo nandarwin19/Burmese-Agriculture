@@ -54,10 +54,10 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* <img
+      <img
         src="/img/p1.png"
         className="object-cover lg:hidden w-72 mx-auto mt-8"
-      /> */}
+      />
     </div>
   );
 }

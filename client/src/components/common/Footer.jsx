@@ -1,6 +1,9 @@
 import { PiPottedPlantDuotone } from "react-icons/pi";
+import { useLocation } from "react-router-dom";
 
 export default function Footer() {
+  const location = useLocation();
+  const isRootRoute = location.pathname === "/";
 
   return (
     <div className="w-full bg-[#021801] h-full">
@@ -9,8 +12,10 @@ export default function Footer() {
           <div className="flex w-full items-start md:w-2/3">
             <div className="flex gap-2 w-1/2 flex-col items-start">
               <div className="flex gap-2 items-center text-lg md:text-xl font-bold">
-                <PiPottedPlantDuotone className="lg:hidden" />
-                <p className="ml-12">Planto.</p>
+                <PiPottedPlantDuotone
+                  className={`${isRootRoute ? "lg:hidden" : null}`}
+                />
+                <p className={`${isRootRoute ? "lg:ml-12" : null}`}>Planto.</p>
               </div>
 
               <p className="text-sm">
@@ -45,7 +50,7 @@ export default function Footer() {
         </div>
 
         <p className="text-[#8F8F8F] text-center text-sm pb-4">
-          © 2021 Planto. All rights reserved.
+          © 2024 Planto. All rights reserved.
         </p>
       </div>
     </div>

@@ -59,7 +59,7 @@ export default function Scene({ ...props }) {
           // .to(camera.position, { x: isDesktop ? 0.8 : 0, y: 0 }, "key3")
           .to(threeScene.rotation, { z: 0, y: 6.3 }, "key4")
           .to(threeScene.scale, { x: 0.1, y: 0.1, z: 0.1 }, "key4")
-          .to(camera.position, { x: isDesktop ? 1.85 : 0, y: 0.4 }, "key4");
+          .to(camera.position, { x: isDesktop ? 1.9 : 0, y: 0.38 }, "key4");
 
         if (isMobile) {
           camera.fov = 20;

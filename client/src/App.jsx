@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/common/Navbar";
 import SignInUp from "./pages/SignInUp";
 import Home from "./pages/Home";
-import CreateBlog from "./components/create-blog/CreateBlog";
+
 import OnlyAdminPrivateRoute from "./components/common/OnlyAdminPrivateRoute";
 import Profile from "./pages/Profile";
 import UpdateBlog from "./pages/UpdateBlog";
@@ -31,7 +31,6 @@ function App() {
 
           {/* Private Route  */}
           <Route element={<OnlyAdminPrivateRoute />}>
-            <Route path="/create-blog" element={<CreateBlog />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/update-blog/:postId" element={<UpdateBlog />} />
           </Route>

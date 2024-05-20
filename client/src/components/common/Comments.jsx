@@ -111,7 +111,9 @@ export default function Comments() {
           </div>
         </>
       ) : (
-        <p>You have no comments yet!</p>
+        <div className="flex justify-center items-center min-h-screen">
+          <span className="loading loading-spinner loading-lg"></span>
+        </div>
       )}
       {showMore && (
         <button

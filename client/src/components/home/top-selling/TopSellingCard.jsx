@@ -7,7 +7,7 @@ export default function TopSellingCard({ img, description, title, price }) {
       <img
         src={img}
         alt="plant"
-        className="w-60 absolute top-[-60px] left-1/2 right-1/2 -translate-x-1/2 h-auto object-center"
+        className="w-60 absolute top-[-60px] left-1/2 right-1/2 -translate-x-1/2 h-60 object-center"
       />
       <div className="flex flex-col justify-between pt-40 gap-2">
         <h3 className="text-xl font-semibold text-gray-300">{title}</h3>

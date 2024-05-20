@@ -1,7 +1,6 @@
 import { CiCalendarDate, CiShare2, CiUser } from "react-icons/ci";
 import { FaRegComments } from "react-icons/fa";
 import { PiHandsClapping } from "react-icons/pi";
-import Comments from "../components/Blog-Id-page/Comments";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import CommentSection from "../components/common/CommentSection";

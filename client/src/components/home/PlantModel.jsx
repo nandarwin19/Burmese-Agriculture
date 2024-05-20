@@ -1,7 +1,12 @@
 import "./css/PlantModel.css";
 import { Canvas } from "@react-three/fiber";
 import Scene from "../model/Scene";
-import { AdaptiveDpr, AdaptiveEvents, Environment } from "@react-three/drei";
+import {
+  AdaptiveDpr,
+  AdaptiveEvents,
+  Environment,
+  Preload,
+} from "@react-three/drei";
 import { Suspense } from "react";
 
 export default function PlantModel() {
@@ -13,14 +18,23 @@ export default function PlantModel() {
       <Canvas camera={{ fov: 14 }}>
         <ambientLight intensity={1.25} />
         <directionalLight intensity={0.4} />
-        <Suspense fallback={null}>
+        <Suspense fallback={FallbackImage}>
           <Scene />
         </Suspense>
         <Environment preset="night" />
         <AdaptiveDpr pixelated />
         <AdaptiveEvents />
         {/* <OrbitControls /> */}
+        <Preload all />
       </Canvas>
     </div>
   );
 }
+
+const FallbackImage = () => {
+  return (
+    <div className="flex h-screen w-full items-center justify-center">
+      <img src="/img/p1.png" alt="Fallback" className="h-auto w-auto" />
+    </div>
+  );
+};

@@ -2,7 +2,7 @@ import TopSellingCard from "./TopSellingCard";
 
 export default function TopSellingCards() {
   return (
-    <div className="flex flex-wrap mt-10 gap-10">
+    <div className="flex flex-wrap mt-10 gap-5">
       <TopSellingCard
         img="/img/p4.png"
         title="Product 1"

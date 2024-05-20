@@ -65,9 +65,9 @@ export default function SignInUp() {
   };
 
   return (
-    <div className="h-[90vh] w-full flex items-center justify-center bg-slate-200  font-poppins">
+    <div className="h-[90vh] w-full flex items-center justify-center bg-[#08210f] text-slate-200  font-poppins">
       <div className="w-11/12 mx-auto pt-10">
-        <div className="w-full max-w-sm mx-auto bg-slate-200 backdrop-blur-md rounded-lg p-8 py-16 border-2 border-gray-300/60 shadow-md ">
+        <div className="w-full max-w-sm mx-auto bg-zinc-200 backdrop-blur-md rounded-lg p-8 py-16 border-2 border-gray-300/60 shadow-md ">
           <h1 className="text-2xl mb-5 text-center text-black font-bold">
             {toggle ? "Sign Up" : "Sign In"}
           </h1>
@@ -101,7 +101,7 @@ export default function SignInUp() {
 
             <button
               disabled={loading}
-              className="w-full cursor-pointer flex items-center justify-center gap-2 mt-3 py-2 relative text-white bg-black/90 font-medium rounded-lg"
+              className="w-full cursor-pointer flex items-center justify-center gap-2 mt-3 py-2 relative text-white bg-black/85 font-medium rounded-lg"
             >
               {toggle ? "Sign Up" : "Sign In"}
               {loading ? (
