@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Footer from "./components/common/Footer";
+
 import Navbar from "./components/common/Navbar";
 import SignInUp from "./pages/SignInUp";
 import Home from "./pages/Home";
@@ -11,6 +11,8 @@ import PostPage from "./pages/PostPage";
 import ScrollToTop from "./components/common/ScrollToTop";
 import BlogPage from "./pages/BlogPage";
 import SearchPage from "./pages/SearchPage";
+import Plant from "./pages/Plant";
+import AppWrapper from "./AppWrapper";
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
           <Route path="/blogs" element={<BlogPage />} />
           <Route path="/blogs/:blogSlug" element={<PostPage />} />
           <Route path="/search" element={<SearchPage />} />
+          <Route path="/plant" element={<Plant />} />
 
           {/* Private Route  */}
           <Route element={<OnlyAdminPrivateRoute />}>
@@ -33,7 +36,7 @@ function App() {
             <Route path="/update-blog/:postId" element={<UpdateBlog />} />
           </Route>
         </Routes>
-        <Footer />
+        <AppWrapper />
       </div>
     </Router>
   );

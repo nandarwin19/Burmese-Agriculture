@@ -9,9 +9,8 @@ function Home() {
   return (
     <div className="bg-[#02210a] text-slate-200">
       <Hero />
-
       <TrendyPlant />
-      {/* <PlantModel /> */}
+      <PlantModel />
       <TopSelling />
       <TrendyPlant />
       <CustomerReview />

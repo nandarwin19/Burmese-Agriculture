@@ -18,7 +18,7 @@ export default function Scene({ ...props }) {
     let mm = gsap.matchMedia();
     mm.add(
       {
-        isDesktop: `(min-width: 48em)`,
+        isDesktop: `(min-width: 40em)`,
         isMobile: `(max-width: 29em)`,
       },
       (context) => {
@@ -43,10 +43,10 @@ export default function Scene({ ...props }) {
           { y: 0 }
         )
 
-          .to(threeScene.rotation, { y: 3 }, "key-1")
+          .to(threeScene.rotation, { y: 2 }, "key-1")
 
           // .to(threeScene.rotation, { y: 3, z: -3 }, "key0")
-          .to(threeScene.scale, { x: 10, y: 10, z: 10 }, "key0")
+          // .to(threeScene.scale, { x: -1, y: -1, z: -1 }, "key0")
           .to(camera.position, { z: -10, x: 2.1, y: 1 }, "key0")
           .to(threeScene.rotation, { z: 1.58 }, "key1")
           .to(camera.position, { z: -10 }, "key1")
@@ -59,7 +59,7 @@ export default function Scene({ ...props }) {
           // .to(camera.position, { x: isDesktop ? 0.8 : 0, y: 0 }, "key3")
           .to(threeScene.rotation, { z: 0, y: 6.3 }, "key4")
           .to(threeScene.scale, { x: 0.1, y: 0.1, z: 0.1 }, "key4")
-          .to(camera.position, { x: isDesktop ? 1.7 : 0, y: 0.43 }, "key4");
+          .to(camera.position, { x: isDesktop ? 1.85 : 0, y: 0.4 }, "key4");
 
         if (isMobile) {
           camera.fov = 20;

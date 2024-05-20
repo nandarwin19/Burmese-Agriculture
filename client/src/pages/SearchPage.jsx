@@ -118,9 +118,18 @@ export default function SearchPage() {
           </div>
           <div className="flex items-center gap-2">
             <label className="font-semibold">Sort:</label>
-            <Select onChange={handleChange} value={sidebarData.sort} id="sort">
-              <option value="desc">Latest</option>
-              <option value="asc">Oldest</option>
+            <Select
+              className="text-[#151515]"
+              onChange={handleChange}
+              value={sidebarData.sort}
+              id="sort"
+            >
+              <option value="desc" className="text-[#151515]">
+                Latest
+              </option>
+              <option value="asc" className="text-[#151515]">
+                Oldest
+              </option>
             </Select>
           </div>
           <div className="flex items-center gap-2">
@@ -129,14 +138,23 @@ export default function SearchPage() {
               onChange={handleChange}
               value={sidebarData.category}
               id="category"
+              className="text-[#151515]"
             >
-              <option value="uncategorized">Uncategorized</option>
-              <option value="fruit">Fruit</option>
-              <option value="vegetable">Vegetable</option>
-              <option value="flower">Flower</option>
+              <option value="uncategorized" className="text-[#151515]">
+                Uncategorized
+              </option>
+              <option value="fruit" className="text-[#151515]">
+                Fruit
+              </option>
+              <option value="vegetable" className="text-[#151515]">
+                Vegetable
+              </option>
+              <option value="flower" className="text-[#151515]">
+                Flower
+              </option>
             </Select>
           </div>
-          <Button type="submit" outline gradientDuoTone="purpleToPink">
+          <Button type="submit" outline className="text-[#151515]">
             Apply
           </Button>
         </form>
