@@ -1,5 +1,6 @@
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { PiPlantFill } from "react-icons/pi";
+import PropTypes from "prop-types";
 
 export default function BlogTitle({ onShowMore }) {
   return (
@@ -21,3 +22,7 @@ export default function BlogTitle({ onShowMore }) {
     </div>
   );
 }
+
+BlogTitle.propTypes = {
+  onShowMore: PropTypes.func.isRequired,
+};

@@ -1,10 +1,6 @@
-import React from "react";
 import { useLocation } from "react-router-dom";
 import Footer from "./components/common/Footer";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// gsap.registerPlugin(ScrollTrigger);
+import PropTypes from "prop-types";
 
 const AppWrapper = ({ children }) => {
   const location = useLocation();
@@ -16,6 +12,10 @@ const AppWrapper = ({ children }) => {
       {!isPlantRoute && <Footer />}
     </>
   );
+};
+
+AppWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default AppWrapper;

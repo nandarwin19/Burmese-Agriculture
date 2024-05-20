@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Proptypes from "prop-types";
+import PropTypes from "prop-types";
 import { CiCalendarDate, CiUser } from "react-icons/ci";
 import { MdOutlineTopic } from "react-icons/md";
 
@@ -51,3 +51,14 @@ export default function PostCard({ post }) {
     </div>
   );
 }
+
+PostCard.propTypes = {
+  post: PropTypes.shape({
+    slug: PropTypes.string.isRequired,
+    image: PropTypes.string,
+    createdAt: PropTypes.string,
+    category: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
+  }),
+};

@@ -9,7 +9,6 @@ import {
   ref,
   uploadBytesResumable,
 } from "firebase/storage";
-
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { app } from "../firebase";

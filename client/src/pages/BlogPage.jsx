@@ -4,7 +4,7 @@ import BlogTitle from "../components/common/Blog-title";
 
 export default function BlogPage() {
   const [blogPosts, setBlogPosts] = useState(null);
-  const [showMore, setShowMore] = useState(false);
+
   useEffect(() => {
     try {
       const fetchReactPosts = async () => {
