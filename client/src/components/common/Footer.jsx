@@ -37,12 +37,12 @@ export default function Footer() {
             <h3 className="text-lg md:text-xl font-bold">
               For Everyone Update
             </h3>
-            <div className="md:w-auto border border-slate-400">
+            <div className="w-full border border-slate-400">
               <input
-                className="bg-transparent border min-w-[200px] border-slate-400 py-1 px-2 placeholder:text-sm"
+                className="bg-transparent border w-2/3 border-slate-400 py-1 px-2 placeholder:text-sm"
                 placeholder="Enter Email"
               />
-              <button className="bg-white scale-105 uppercase px-2 py-1 text-black rouned-md">
+              <button className="bg-white w-1/3 scale-105 uppercase px-2 py-1 text-black rouned-md">
                 Subscribe
               </button>
             </div>

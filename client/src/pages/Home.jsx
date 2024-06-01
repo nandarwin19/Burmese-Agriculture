@@ -12,7 +12,6 @@ function Home() {
       <TrendyPlant />
       <PlantModel />
       <TopSelling />
-      <TrendyPlant />
       <CustomerReview />
       <BlogSession />
     </div>

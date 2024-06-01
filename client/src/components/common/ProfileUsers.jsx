@@ -55,7 +55,7 @@ export default function ProfileUsers() {
         },
       });
       const data = await res.json();
-      console.log(data);
+      // console.log(data);
       if (res.ok) {
         setUsers((prev) => prev.filter((user) => user._id !== userIdToDelete));
         document.getElementById("my_modal_5").close();
@@ -131,7 +131,9 @@ export default function ProfileUsers() {
           </div>
         </>
       ) : (
-        <p>There is no users</p>
+        <div className="flex justify-center items-center min-h-screen">
+          <span className="loading loading-spinner loading-lg"></span>
+        </div>
       )}
       {showMore && (
         <button

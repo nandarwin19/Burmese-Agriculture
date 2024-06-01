@@ -7,24 +7,6 @@
   src: url("/Roobert-Regular/Roobert-Regular.ttf") format("truetype");
 }
 
-@font-face {
-  font-family: "Cobaissi";
-  src: url("/fonts/Cobaissi-Font/COBAISSI.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Aquatico";
-  src: url("/fonts/Aquatico-Font/Aquatico-Regular.otf") format("opentype");
-}
-
-.Aquatico {
-  font-family: "Aquatico", "Cobaissi", "roobert", inter;
-}
-
-.Cobaissi {
-  font-family: "Cobaissi";
-}
-
 .roobert {
   font-family: "roobert", inter;
 }
@@ -50,7 +32,7 @@ body {
 }
 
 .trendy-plant-bg {
-  background-image: url("/img/trendy-plant-bg.png");
+  background-image: url("/img/p-main.png");
   height: 100%;
   width: 100%;
   background-repeat: no-repeat;

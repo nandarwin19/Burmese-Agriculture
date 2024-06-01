@@ -15,7 +15,7 @@ export default function CommentSection({ postId }) {
   const [commentToDelete, setCommentToDelete] = useState(null);
 
   const navigate = useNavigate();
-  console.log(comments);
+  // console.log(comments);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

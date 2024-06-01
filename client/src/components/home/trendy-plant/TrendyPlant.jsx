@@ -14,7 +14,7 @@ export default function TrendyPlant() {
           price="39.99"
         />
 
-        <div className="lg:ml-[50%] w-full">
+        <div className="md:ml-[50%] w-full">
           <TrendyPlantCard
             image={`/img/p3.png`}
             title="Monstera Deliciosa (Swiss Cheese Plant)"

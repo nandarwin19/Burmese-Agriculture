@@ -23,7 +23,7 @@ export default function UpdateBlog() {
   const [publishError, setPublishError] = useState(null);
   const { postId } = useParams();
   const navigate = useNavigate();
-  console.log(postId);
+  // console.log(postId);
 
   useEffect(() => {
     try {

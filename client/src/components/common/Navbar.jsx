@@ -36,15 +36,17 @@ export default function Navbar() {
   return (
     <div className={`${headerColor} z-50 flex items-center w-full h-[10vh]`}>
       <nav className="flex max-container items-center justify-between">
-        <div
-          className={`${headerTextColor} flex gap-2 items-center text-xl font-bold`}
-        >
-          <PiPottedPlantDuotone className="text-3xl" />
-          <p>Planto</p>
-        </div>
-        <div className={`hidden ${ulTextColor} md:flex text-md font-bold`}>
+        <Link to={`/`}>
+          <div
+            className={`${headerTextColor} flex gap-2 items-center text-xl font-bold`}
+          >
+            <PiPottedPlantDuotone className="text-3xl" />
+            <p>Planto</p>
+          </div>
+        </Link>
+        <div className={`${ulTextColor} md:flex text-sm lg:text-md font-bold`}>
           <ul className="items-center gap-8 flex">
-            <Link to={`/`}>
+            <Link to={`/`} className="hidden md:flex">
               <li className="cursor-pointer">Home</li>
             </Link>
             <Link to={"/plant"}>

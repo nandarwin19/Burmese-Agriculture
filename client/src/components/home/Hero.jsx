@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { FaPlay, FaStar } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
 export default function Hero() {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -18,13 +18,15 @@ export default function Hero() {
         </p>
         <div className="flex gap-6 mt-5">
           <button className="py-1 rounded-md tracking-wider px-4 md:px-5 flex items-center justify-center border border-gray-400">
-            Explore
+            <Link to={`/search`}>Explore</Link>
           </button>
           <button className="flex items-center justify-center gap-2">
-            <small className="w-6 h-6 md:w-8 md:h-8 rounded-full border flex items-center justify-center">
-              <FaPlay className="text-[10px] md:text-md" />
-            </small>
-            Live Demo....
+            <Link to={`/plant`}>
+              <small className="w-6 h-6 md:w-8 md:h-8 rounded-full border flex items-center justify-center">
+                <FaPlay className="text-[10px] md:text-md" />
+              </small>
+              Live Demo....
+            </Link>
           </button>
         </div>
         <div className="hidden lg:flex flex-col bg-blur bg-[#d7d7d70b] items-start w-1/2 mt-20 gap-3 p-5 border-2 border-[#80808078] rounded-2xl">
@@ -55,8 +57,8 @@ export default function Hero() {
       </div>
 
       <img
-        src="/img/p1.png"
-        className="object-cover lg:hidden w-72 mx-auto mt-8"
+        src="/img/p-main.png"
+        className="object-cover md:hidden w-44 mx-auto mt-8"
       />
     </div>
   );

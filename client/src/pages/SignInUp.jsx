@@ -67,8 +67,8 @@ export default function SignInUp() {
   return (
     <div className="h-[90vh] w-full flex items-center justify-center bg-[#08210f] text-slate-200  font-poppins">
       <div className="w-11/12 mx-auto pt-10">
-        <div className="w-full max-w-sm mx-auto bg-zinc-200 backdrop-blur-md rounded-lg p-8 py-16 border-2 border-gray-300/60 shadow-md ">
-          <h1 className="text-2xl mb-5 text-center text-black font-bold">
+        <div className="w-full max-w-sm mx-auto bg-[#0d3919] backdrop-blur-md rounded-lg p-8 py-16 border-2 border-black/30 shadow-md ">
+          <h1 className="text-2xl mb-5 text-center text-white font-bold">
             {toggle ? "Sign Up" : "Sign In"}
           </h1>
           <form
@@ -79,7 +79,7 @@ export default function SignInUp() {
               <input
                 type="text"
                 placeholder="username"
-                className="border text-black/90 p-3 rounded-lg"
+                className="border border-black/30 bg-[#063112] text-white/90 focus:outline-none outline-none p-3 rounded-lg"
                 id="username"
                 onChange={handleChange}
               />
@@ -87,14 +87,14 @@ export default function SignInUp() {
             <input
               type="email"
               placeholder="email"
-              className="border text-black/90 p-3 rounded-lg"
+              className="border border-black/30 bg-[#063112] text-white/90 focus:outline-none outline-none p-3 rounded-lg"
               id="email"
               onChange={handleChange}
             />
             <input
               type="password"
               placeholder="password"
-              className="border text-black/90 p-3 rounded-lg"
+              className="border border-black/30 bg-[#063112] text-white/90 focus:outline-none outline-none p-3 rounded-lg"
               id="password"
               onChange={handleChange}
             />
@@ -113,13 +113,13 @@ export default function SignInUp() {
               ) : null}
             </button>
           </form>
-          <div className="flex gap-2 text-black/70 text-sm mt-5">
+          <div className="flex gap-2 text-white/70 text-sm mt-5">
             <p>
               {toggle ? `Don't have an account?` : `Already have an account`}
             </p>
 
             <span
-              className="text-blue-700 cursor-pointer"
+              className="text-blue-600 cursor-pointer"
               onClick={() => setToggle(!toggle)}
             >
               {toggle ? "Sign In" : "Sign Up"}

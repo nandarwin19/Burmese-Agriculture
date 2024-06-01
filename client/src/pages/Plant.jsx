@@ -3,7 +3,7 @@ import Scene from "../components/common/Scene";
 
 export default function Plant() {
   return (
-    <div className="h-screen w-full">
+    <div className="h-screen bg-slate-200 w-full">
       <Canvas
         camera={{
           fov: 45,
