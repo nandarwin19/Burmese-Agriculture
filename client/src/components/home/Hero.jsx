@@ -20,14 +20,14 @@ export default function Hero() {
           <button className="py-1 rounded-md tracking-wider px-4 md:px-5 flex items-center justify-center border border-gray-400">
             <Link to={`/search`}>Explore</Link>
           </button>
-          <button className="flex items-center justify-center gap-2">
-            <Link to={`/plant`}>
+          <Link to={`/plant`}>
+            <button className="flex items-center justify-center gap-2">
               <small className="w-6 h-6 md:w-8 md:h-8 rounded-full border flex items-center justify-center">
                 <FaPlay className="text-[10px] md:text-md" />
               </small>
               Live Demo....
-            </Link>
-          </button>
+            </button>
+          </Link>
         </div>
         <div className="hidden lg:flex flex-col bg-blur bg-[#d7d7d70b] items-start w-1/2 mt-20 gap-3 p-5 border-2 border-[#80808078] rounded-2xl">
           <div className="flex items-center justify-center gap-2">

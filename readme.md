@@ -62,4 +62,8 @@
 3. Create , manage, update, and delete all user data (all users have admin privileges).
 4. Add comments to posts.
 
+## Resources
 
+1. [100 JavaScript Projects Blog](https://blog.100jsprojects.com/)
+2. [Burmese Agriculture](https://blazor-wasm-burmese-agriculture.vercel.app/)
+3. [UI Figma Design](<https://www.figma.com/design/hNtEr9NRFpbT9a5IgSq6XR/Interactive-Portfolio-Website%3A-Figma-UI-Design-Tutorial-for-Beginners-%7C-Step-by-Step-Guide-(Community)?node-id=0-1>)
