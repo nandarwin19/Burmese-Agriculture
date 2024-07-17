@@ -1,8 +1,12 @@
 import { useGLTF } from "@react-three/drei";
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function FlowerScence() {
   const { scene } = useGLTF("/model/flower.glb");
+
+  useEffect(() => {
+    console.log("3D loaded");
+  }, []);
 
   return (
     <>

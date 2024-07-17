@@ -3,8 +3,8 @@ import Title from "../../common/Title";
 
 export default function BlogSession() {
   return (
-    <div id="blog" className="w-full min-h-screen">
-      <div className="max-container pt-20">
+    <div id="blog" className="w-full h-full">
+      <div className="max-container py-20">
         <Title text="Our Blog" />
         <div className="mt-10">
           <BlogCard

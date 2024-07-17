@@ -6,8 +6,8 @@ export default function Hero() {
   gsap.registerPlugin(ScrollTrigger);
 
   return (
-    <div className="max-container h-screen">
-      <div className=" w-4/5 md:w-1/2 mt-16">
+    <div className="max-container flex flex-col lg:flex-row lg:justify-between h-screen">
+      <div className=" w-4/5 md:w-1/2 mt-16 lg:mt-28">
         <h1 className="roobert whitespace-nowrap text-[3rem] md:text-[5rem] lg:text-[6rem] font-bold tracking-wide">
           Breath Natureal
         </h1>
@@ -56,10 +56,12 @@ export default function Hero() {
         </div>
       </div>
 
-      <img
-        src="/img/p-main.png"
-        className="object-cover md:hidden w-44 mx-auto mt-8"
-      />
+      <div className="lg:w-1/2 w-full">
+        <img
+          src="/img/p-main.png"
+          className=" object-cover w-52 lg:w-80 mx-auto mt-16 lg:mt-52"
+        />
+      </div>
     </div>
   );
 }

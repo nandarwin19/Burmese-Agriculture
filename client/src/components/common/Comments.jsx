@@ -23,7 +23,7 @@ export default function Comments() {
         console.log(error.message);
       }
     };
-    if (currentUser.isAdmin) {
+    if (currentUser) {
       fetchComments();
     }
   }, [currentUser._id]);
@@ -72,7 +72,7 @@ export default function Comments() {
 
   return (
     <div className="">
-      {currentUser.isAdmin && comments.length > 0 ? (
+      {currentUser && comments.length > 0 ? (
         <>
           <div className=" overflow-x-scroll overflow-y-scroll md:overflow-hidden p-3">
             <table className="table">

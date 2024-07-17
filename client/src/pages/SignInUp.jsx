@@ -52,7 +52,7 @@ export default function SignInUp() {
       return dispatch(signInFailure("Please fill all the fields"));
     }
 
-    handleRequest("/api/auth/signup");
+    handleRequest(`/api/auth/signup`);
   };
 
   const handleSignIn = (e) => {
@@ -61,7 +61,7 @@ export default function SignInUp() {
       return dispatch(signInFailure("Please fill all the fields"));
     }
 
-    handleRequest("/api/auth/signin");
+    handleRequest(`/api/auth/signin`);
   };
 
   return (

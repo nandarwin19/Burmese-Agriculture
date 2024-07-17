@@ -13,7 +13,9 @@ import BlogPage from "./pages/BlogPage";
 import SearchPage from "./pages/SearchPage";
 import Plant from "./pages/Plant";
 import AppWrapper from "./AppWrapper";
+import { disableReactDevTools } from "@fvilers/disable-react-devtools";
 
+if (process.env.NODE_ENV === "production") disableReactDevTools("production");
 function App() {
   return (
     <Router>

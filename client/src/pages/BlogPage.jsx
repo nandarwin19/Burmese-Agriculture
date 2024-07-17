@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import PostCard from "../components/common/PostCard";
 import BlogTitle from "../components/common/Blog-title";
 
@@ -6,18 +6,21 @@ export default function BlogPage() {
   const [blogPosts, setBlogPosts] = useState(null);
 
   useEffect(() => {
-    try {
-      const fetchReactPosts = async () => {
+    const fetchReactPosts = async () => {
+      try {
         const res = await fetch(`/api/post/getposts?limit=4`);
+
         const data = await res.json();
+        console.log(res);
         if (res.ok) {
           setBlogPosts(data.posts);
         }
-      };
-      fetchReactPosts();
-    } catch (error) {
-      console.log(error.message);
-    }
+      } catch (error) {
+        console.error(error.message);
+      }
+    };
+
+    fetchReactPosts();
   }, []);
 
   const handleShowMore = async () => {

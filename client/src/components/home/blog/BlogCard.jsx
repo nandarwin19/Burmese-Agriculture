@@ -40,5 +40,4 @@ BlogCard.propTypes = {
   image: Proptyes.string.isRequired,
   title: Proptyes.string.isRequired,
   description: Proptyes.string.isRequired,
-  //   pagenumber: Proptyes.number.isRequired,
 };

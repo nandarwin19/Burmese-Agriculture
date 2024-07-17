@@ -1,8 +1,9 @@
-import { Button, Textarea } from "flowbite-react";
+import { Textarea } from "flowbite-react";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import { FaThumbsUp } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import PropTypes from "prop-types";
 
 export default function Comment({ comment, onLike, onEdit, onDelete }) {
   const [user, setUser] = useState({});
@@ -138,3 +139,10 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
     </div>
   );
 }
+
+Comment.propTypes = {
+  comment: PropTypes.object.isRequired,
+  onLike: PropTypes.func.isRequired,
+  onEdit: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
+};

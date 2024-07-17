@@ -13,7 +13,7 @@ export default function ProfilePosts() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await fetch(`/api/post/getposts?userId=${currentUser._id}`);
+        const res = await fetch(`/api/post/getposts`);
         const data = await res.json();
         if (res.ok) {
           setUserPosts(data.posts);
@@ -32,7 +32,9 @@ export default function ProfilePosts() {
     const startIndex = userPosts.length;
     try {
       const res = await fetch(
-        `/api/post/getposts?userId=${currentUser._id}&startIndex=${startIndex}`
+        `${import.meta.env.VITE_API_BASE_URL}/post/getposts?userId=${
+          currentUser._id
+        }&startIndex=${startIndex}`
       );
       const data = await res.json();
       if (res.ok) {
@@ -51,7 +53,9 @@ export default function ProfilePosts() {
     document.getElementById("my_modal_5").close();
     try {
       const res = await fetch(
-        `/api/post/deletepost/${postIdToDelete}/${currentUser._id}`,
+        `${
+          import.meta.env.VITE_API_BASE_URL
+        }/post/deletepost/${postIdToDelete}/${currentUser._id}`,
         {
           method: "DELETE",
         }
@@ -74,7 +78,7 @@ export default function ProfilePosts() {
   return (
     <div>
       <Toaster />
-      {currentUser.isAdmin && userPosts.length > 0 ? (
+      {currentUser && userPosts.length > 0 ? (
         <>
           <div className=" overflow-x-scroll overflow-y-scroll md:overflow-hidden p-3">
             <table className="table">

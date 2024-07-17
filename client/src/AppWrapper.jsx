@@ -15,7 +15,7 @@ const AppWrapper = ({ children }) => {
 };
 
 AppWrapper.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default AppWrapper;

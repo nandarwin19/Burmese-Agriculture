@@ -1,5 +1,4 @@
 import Hero from "../components/home/Hero";
-import PlantModel from "../components/home/PlantModel";
 import BlogSession from "../components/home/blog/BlogSession";
 import CustomerReview from "../components/home/review/CustomerReview";
 import TopSelling from "../components/home/top-selling/TopSelling";
@@ -10,7 +9,7 @@ function Home() {
     <div className="bg-[#02210a] text-slate-200">
       <Hero />
       <TrendyPlant />
-      <PlantModel />
+      {/* <PlantModel /> */}
       <TopSelling />
       <CustomerReview />
       <BlogSession />

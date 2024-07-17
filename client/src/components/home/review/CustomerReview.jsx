@@ -3,7 +3,7 @@ import ReviewCard from "./ReviewCard";
 
 export default function CustomerReview() {
   return (
-    <div className="w-full min-h-screen">
+    <div className="w-full h-full py-20 lg:py-24">
       <div className="pt-20 max-container">
         <Title text="Customer Review" />
         <div className="flex flex-wrap items-center flex-col md:flex-row justify-between mt-10">

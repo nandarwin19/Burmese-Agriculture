@@ -30,7 +30,7 @@ export default function Scene({ ...props }) {
         let t1 = gsap.timeline({
           scrollTrigger: {
             trigger: "#plant-model",
-            start: "top-=1500 top",
+            start: "top-=500 top",
             endTrigger: "#blog",
             end: "top top",
             scrub: 1,
