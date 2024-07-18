@@ -60,6 +60,7 @@ export default function ProfilePosts() {
       // console.log("delete data", data);
       if (!res.ok) {
         console.log(data.message);
+        toast.error(data.message);
       } else {
         setUserPosts((prev) =>
           prev.filter((post) => post._id !== postIdToDelete)
@@ -68,7 +69,7 @@ export default function ProfilePosts() {
       }
     } catch (error) {
       console.log(error.message);
-      toast.error("Something went wrong");
+      toast.error(error.message);
     }
   };
 

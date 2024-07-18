@@ -13,6 +13,7 @@ import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { app } from "../firebase";
 import { useSelector } from "react-redux";
+import toast from "react-hot-toast";
 
 export default function UpdateBlog() {
   const { currentUser } = useSelector((state) => state.user);
@@ -43,7 +44,7 @@ export default function UpdateBlog() {
 
       fetchPost();
     } catch (error) {
-      console.log(error.message);
+      toast.error(error.message);
     }
   }, [postId]);
 
@@ -78,7 +79,7 @@ export default function UpdateBlog() {
     } catch (error) {
       setImageUploadError("Image upload failed");
       setImageUploadProgress(null);
-      console.log(error);
+      toast.error(error.message);
     }
   };
 

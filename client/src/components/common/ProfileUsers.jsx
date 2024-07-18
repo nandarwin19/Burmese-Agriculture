@@ -22,8 +22,8 @@ export default function ProfileUsers() {
           }
         }
       } catch (error) {
-        console.log(error.message);
-        toast.error("Something went wrong");
+        // console.log(error.message);
+        toast.error(error.message);
       }
     };
     fetchUsers();
@@ -42,7 +42,7 @@ export default function ProfileUsers() {
       }
     } catch (error) {
       console.log(error.message);
-      toast.error("Something went wrong");
+      toast.error(error.message);
     }
   };
 
@@ -58,15 +58,16 @@ export default function ProfileUsers() {
       console.log(data);
       if (res.ok) {
         setUsers((prev) => prev.filter((user) => user._id !== userIdToDelete));
-        document.getElementById("my_modal_5").close();
+
         toast.success("User deleted");
       } else {
         console.log(data.message);
-        toast.error("Something went wrong");
+        toast.error(data.message);
       }
+      document.getElementById("my_modal_5").close();
     } catch (error) {
       console.log(error.message);
-      toast.error("Something went wrong");
+      toast.error(error.message);
     }
   };
 

@@ -61,15 +61,16 @@ export default function ProfileComments() {
         setComments((prev) =>
           prev.filter((comment) => comment._id !== commentIdToDelete)
         );
-        setShowModal(false);
-        document.getElementById("my_modal_5").close();
+
+        toast.success("Comment deleted");
       } else {
         console.log(data.message);
+        toast.error(data.message);
       }
-      toast.success("Comment deleted");
+      setShowModal(false);
+      document.getElementById("my_modal_5").close();
     } catch (error) {
-      console.log(error.message);
-      toast.error("Something went wrong");
+      toast.error(error.message);
     }
   };
 
