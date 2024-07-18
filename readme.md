@@ -1,5 +1,10 @@
 # Planto
 
+```bash
+admin email: admin@gmail.com
+admin password: admin123
+```
+
 ## Technologies Used
 
 - Node.js
@@ -17,10 +22,6 @@
 - **User Authentication:** Secure login and logout. Users can also delete their own listings.
 - **Post Management:** Users can create posts, comment on them, and view a dashboard that includes user lists, post lists, and comment lists. Note that all users have admin privileges.
 
-## To Do
-
-- Add GSAP (maybe after some weeks).
-
 ## Installation
 
 1. Clone the repository:
@@ -28,6 +29,8 @@
    ```bash
    git clone https://github.com/nandarwin19/Burmese-Agriculture.git
    ```
+
+````
 
 2. Install dependencies:
 
@@ -59,11 +62,10 @@
 
 1. Create an account or log in or sign out.
 2. Search for listings based on your profile page.
-3. Create , manage, update, and delete all user data (all users have admin privileges).
+3. Create , manage, update, and delete personal data (all users don't have admin privileges).
 4. Add comments to posts.
 
-## Resources
+## UI Resources
 
-1. [100 JavaScript Projects Blog](https://blog.100jsprojects.com/)
-2. [Burmese Agriculture](https://blazor-wasm-burmese-agriculture.vercel.app/)
-3. [UI Figma Design](<https://www.figma.com/design/hNtEr9NRFpbT9a5IgSq6XR/Interactive-Portfolio-Website%3A-Figma-UI-Design-Tutorial-for-Beginners-%7C-Step-by-Step-Guide-(Community)?node-id=0-1>)
+1. [UI Figma Design](<https://www.figma.com/design/hNtEr9NRFpbT9a5IgSq6XR/Interactive-Portfolio-Website%3A-Figma-UI-Design-Tutorial-for-Beginners-%7C-Step-by-Step-Guide-(Community)?node-id=0-1>)
+````
