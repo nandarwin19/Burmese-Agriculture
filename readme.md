@@ -30,8 +30,6 @@ admin password: admin123
    git clone https://github.com/nandarwin19/Burmese-Agriculture.git
    ```
 
-````
-
 2. Install dependencies:
 
    ```bash
@@ -68,4 +66,3 @@ admin password: admin123
 ## UI Resources
 
 1. [UI Figma Design](<https://www.figma.com/design/hNtEr9NRFpbT9a5IgSq6XR/Interactive-Portfolio-Website%3A-Figma-UI-Design-Tutorial-for-Beginners-%7C-Step-by-Step-Guide-(Community)?node-id=0-1>)
-````
