@@ -3,6 +3,7 @@ import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../common/Loader";
+import PropsTypes from "prop-types";
 
 const Plants = ({ isMobile }) => {
   const plant = useGLTF("./model/red_rose.glb");
@@ -33,6 +34,10 @@ const Plants = ({ isMobile }) => {
       />
     </mesh>
   );
+};
+
+Plants.propTypes = {
+  isMobile: PropsTypes.bool,
 };
 
 const PlantCanvas = () => {

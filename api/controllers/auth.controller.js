@@ -28,10 +28,7 @@ export const signup = async (req, res, next) => {
   try {
     await newUser.save();
     const { password: pass, ...rest } = newUser._doc;
-    const token = jwt.sign(
-      { id: newUser._id, isAdmin: validUser.isAdmin },
-      process.env.JWT_SECRET
-    );
+    const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET);
     res
       .status(201)
       .cookie("access_token", token, {
