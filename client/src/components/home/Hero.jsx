@@ -2,6 +2,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { FaPlay, FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import PlantCanvas from "../canvas/Plant";
 export default function Hero() {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -56,12 +57,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="lg:w-1/2 w-full">
-        <img
-          src="/img/p-main.png"
-          className=" object-cover w-52 lg:w-80 mx-auto mt-16 lg:mt-52"
-        />
-      </div>
+      <PlantCanvas />
     </div>
   );
 }

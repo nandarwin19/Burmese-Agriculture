@@ -63,7 +63,7 @@ export default function Navbar() {
             className="cursor-pointer w-5 h-5"
           />
 
-          {currentUser?.isAdmin && (
+          {currentUser && (
             <Link to={"/profile"}>
               <CiUser className="cursor-pointer w-5 h-5" />
             </Link>

@@ -7,7 +7,7 @@ export const test = (req, res) => {
 };
 
 export const getUsers = async (req, res, next) => {
-  if (!req.user.isAdmin) {
+  if (!req.user) {
     return next(errorHandler(403, "You are not allowed to see all users"));
   }
   try {
@@ -49,6 +49,7 @@ export const getUsers = async (req, res, next) => {
 };
 
 export const deleteUsers = async (req, res, next) => {
+
   if (!req.user.isAdmin) {
     return next(errorHandler(403, "You are not allowed to delete users"));
   }

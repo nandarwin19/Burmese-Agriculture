@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { useSelector } from "react-redux";
 
-export default function Comments() {
+export default function ProfileComments() {
   const { currentUser } = useSelector((state) => state.user);
   const [comments, setComments] = useState([]);
   const [showMore, setShowMore] = useState(true);
@@ -65,8 +66,10 @@ export default function Comments() {
       } else {
         console.log(data.message);
       }
+      toast.success("Comment deleted");
     } catch (error) {
       console.log(error.message);
+      toast.error("Something went wrong");
     }
   };
 

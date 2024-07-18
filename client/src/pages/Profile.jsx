@@ -3,13 +3,13 @@ import { Link, useLocation } from "react-router-dom";
 import { CiUser } from "react-icons/ci";
 import { LiaComments } from "react-icons/lia";
 import { MdExitToApp, MdOutlineCreate, MdOutlinePostAdd } from "react-icons/md";
-import Comments from "../components/common/Comments";
 import { Toaster } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { signoutSuccess } from "../redux/user/userSlice";
 import ProfileUsers from "../components/common/ProfileUsers";
 import ProfilePosts from "../components/common/ProfilePosts";
 import CreateBlog from "../components/common/CreateBlog";
+import ProfileComments from "../components/common/ProfileComments";
 
 const sidebarLinks = [
   { name: "users", icon: CiUser, path: "/profile?tab=users" },
@@ -42,7 +42,7 @@ const Profile = () => {
       case "posts":
         return <ProfilePosts />;
       case "comments":
-        return <Comments />;
+        return <ProfileComments />;
       case "create-blog":
         return <CreateBlog />;
       default:

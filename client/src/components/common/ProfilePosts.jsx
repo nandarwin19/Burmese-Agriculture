@@ -32,9 +32,7 @@ export default function ProfilePosts() {
     const startIndex = userPosts.length;
     try {
       const res = await fetch(
-        `${import.meta.env.VITE_API_BASE_URL}/post/getposts?userId=${
-          currentUser._id
-        }&startIndex=${startIndex}`
+        `/api/post/getposts?userId=${currentUser._id}&startIndex=${startIndex}`
       );
       const data = await res.json();
       if (res.ok) {
@@ -53,14 +51,13 @@ export default function ProfilePosts() {
     document.getElementById("my_modal_5").close();
     try {
       const res = await fetch(
-        `${
-          import.meta.env.VITE_API_BASE_URL
-        }/post/deletepost/${postIdToDelete}/${currentUser._id}`,
+        `/api/post/deletepost/${postIdToDelete}/${currentUser._id}`,
         {
           method: "DELETE",
         }
       );
       const data = await res.json();
+      // console.log("delete data", data);
       if (!res.ok) {
         console.log(data.message);
       } else {
@@ -79,7 +76,7 @@ export default function ProfilePosts() {
     <div>
       <Toaster />
       {currentUser && userPosts.length > 0 ? (
-        <>
+        <div>
           <div className=" overflow-x-scroll overflow-y-scroll md:overflow-hidden p-3">
             <table className="table">
               <thead>
@@ -135,7 +132,7 @@ export default function ProfilePosts() {
               ))}
             </table>
           </div>
-        </>
+        </div>
       ) : (
         <div className="flex justify-center items-center min-h-screen">
           <span className="loading loading-spinner loading-lg"></span>

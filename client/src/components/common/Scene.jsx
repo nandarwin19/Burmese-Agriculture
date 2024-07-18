@@ -1,5 +1,3 @@
-import { Suspense } from "react";
-import FlowerScence from "../model/FlowerScence";
 import {
   CubeCamera,
   Environment,
@@ -28,12 +26,7 @@ export default function Scene() {
           </mesh>
         )}
       </CubeCamera>
-      {/* <ambientLight />
-      <directionalLight /> */}
 
-      {/* <Suspense fallback={null}>
-        <FlowerScence />
-      </Suspense> */}
       <Preload all />
     </>
   );

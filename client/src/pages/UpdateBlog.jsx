@@ -103,7 +103,7 @@ export default function UpdateBlog() {
 
       if (res.ok) {
         setPublishError(null);
-        navigate(`/post/${data.slug}`);
+        navigate(`/blogs/${data.slug}`);
       }
     } catch (error) {
       setPublishError("Something went wrong");

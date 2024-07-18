@@ -55,7 +55,7 @@ export default function ProfileUsers() {
         },
       });
       const data = await res.json();
-      // console.log(data);
+      console.log(data);
       if (res.ok) {
         setUsers((prev) => prev.filter((user) => user._id !== userIdToDelete));
         document.getElementById("my_modal_5").close();
@@ -73,7 +73,7 @@ export default function ProfileUsers() {
   return (
     <div>
       <Toaster />
-      {currentUser.isAdmin && users.length > 0 ? (
+      {currentUser && users.length > 0 ? (
         <>
           <div className=" overflow-x-scroll overflow-y-scroll md:overflow-hidden p-3">
             <table className="table">
