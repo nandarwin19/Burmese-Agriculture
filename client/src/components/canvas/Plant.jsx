@@ -28,7 +28,7 @@ const Plants = ({ isMobile }) => {
       />
       <primitive
         object={plant.scene}
-        scale={isMobile ? 1.4 : 2}
+        scale={isMobile ? 1.3 : 2}
         position={isMobile ? [-2, -1, -0.4] : [0, -2.25, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
