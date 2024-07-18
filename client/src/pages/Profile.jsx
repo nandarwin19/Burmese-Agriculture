@@ -67,9 +67,9 @@ const Profile = () => {
   };
 
   return (
-    <div className="w-full  min-h-screen flex flex-col md:flex-row">
+    <div className="w-full  min-h-[90vh] flex flex-col md:flex-row">
       <Toaster />
-      <div className="w-screen gap-4 flex-wrap h-auto lg:min-h-screen flex md:block lg:w-52 mx-2 relative">
+      <div className="w-screen gap-4 flex-wrap h-auto lg:h-auto flex md:block lg:w-52 mx-2 relative">
         <>
           {sidebarLinks.map(({ name, icon: Icon, path }) => (
             <Link
@@ -92,7 +92,7 @@ const Profile = () => {
           </div>
         </>
       </div>
-      <div className="lg:min-h-screen w-[1.2px] bg-[#0c2f0e] mx-2"></div>
+      <div className="lg:min-h-[90vh] w-[1.2px] bg-[#0c2f0e] mx-2"></div>
       <div className="flex-1">{renderContent()}</div>
     </div>
   );

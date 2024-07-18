@@ -1,5 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import Scene from "../components/common/Scene";
+import Scene from "../components/canvas/Scene";
 
 export default function Plant() {
   return (
